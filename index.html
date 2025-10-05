@@ -11,6 +11,37 @@
             name="description"
             content="A simple acknowledgement of inhumane governments for your website"
         />
+
+        <!-- Social Media Meta Tags -->
+        <meta
+            property="og:title"
+            content="Inhumane Government Acknowledgment"
+        />
+        <meta
+            property="og:description"
+            content="A simple acknowledgement of inhumane governments for your website"
+        />
+        <meta
+            property="og:image"
+            content="https://inhumanegov.com/assets/social-preview.png"
+        />
+        <meta property="og:url" content="https://inhumanegov.com" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Inhumane Government Acknowledgment"
+        />
+        <meta
+            name="twitter:description"
+            content="A simple acknowledgement of inhumane governments for your website"
+        />
+        <meta
+            name="twitter:image"
+            content="https://inhumanegov.com/assets/social-preview.png"
+        />
+
         <script src="https://cdn.tailwindcss.com"></script>
         <link
             rel="stylesheet"
@@ -22,47 +53,64 @@
             }
             .code-block {
                 background: #0a0a0a;
-                border-radius: 0.5rem;
+                border-radius: 0.75rem;
                 padding: 1.5rem;
                 position: relative;
                 border: 1px solid #333;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
             }
             .code-block pre {
                 overflow-x: auto;
+                margin: 0;
             }
             .copy-btn {
                 position: absolute;
-                top: 0.5rem;
-                right: 0.5rem;
+                top: 0.75rem;
+                right: 0.75rem;
                 background: #1a1a1a;
                 border: 1px solid #444;
                 color: white;
-                padding: 0.25rem 0.5rem;
-                border-radius: 0.25rem;
+                padding: 0.4rem 0.75rem;
+                border-radius: 0.375rem;
                 cursor: pointer;
-                font-size: 0.75rem;
+                font-size: 0.8rem;
+                transition: all 0.2s ease;
+            }
+            .copy-btn:hover {
+                background: #2a2a2a;
+                border-color: #555;
             }
             .feature-icon {
-                width: 3rem;
-                height: 3rem;
+                width: 4rem;
+                height: 4rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border-radius: 0.75rem;
-                margin-bottom: 1rem;
+                border-radius: 1rem;
+                margin-bottom: 1.25rem;
+                border: 1px solid #333;
+                transition: transform 0.3s ease;
+            }
+            .feature-card:hover .feature-icon {
+                transform: translateY(-5px);
             }
             .demo-modal {
                 background: #0a0a0a;
                 border: 1px solid #333;
-                border-radius: 12px;
-                max-width: 520px;
+                border-radius: 16px;
+                max-width: 540px;
                 width: 100%;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
                 overflow: hidden;
+                transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+                transition: transform 0.3s ease;
+            }
+            .demo-modal:hover {
+                transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
             }
             .modal-header {
                 background: #111;
-                padding: 30px 30px 20px 30px;
+                padding: 2rem 2rem 1.5rem 2rem;
                 border-bottom: 1px solid #333;
                 position: relative;
             }
@@ -72,8 +120,8 @@
                 bottom: -1px;
                 left: 50%;
                 transform: translateX(-50%);
-                width: 100px;
-                height: 2px;
+                width: 120px;
+                height: 3px;
                 background: linear-gradient(
                     90deg,
                     transparent,
@@ -82,54 +130,95 @@
                 );
             }
             .modal-body {
-                padding: 30px;
+                padding: 2rem;
                 background: #0a0a0a;
             }
             .modal-footer {
-                padding: 20px 30px;
+                padding: 1.5rem 2rem;
                 background: #111;
                 border-top: 1px solid #333;
+            }
+            .section-divider {
+                height: 1px;
+                background: linear-gradient(
+                    90deg,
+                    transparent,
+                    #333,
+                    transparent
+                );
+                margin: 2rem 0;
+            }
+            .btn-primary {
+                background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+                border: 1px solid #444;
+                color: white;
+                padding: 0.75rem 1.5rem;
+                border-radius: 0.75rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+            .btn-primary:hover {
+                background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            }
+            .btn-secondary {
+                background: transparent;
+                border: 2px solid white;
+                color: white;
+                padding: 0.75rem 1.5rem;
+                border-radius: 0.75rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+            .btn-secondary:hover {
+                background: white;
+                color: #0a0a0a;
+                transform: translateY(-2px);
             }
         </style>
     </head>
     <body class="bg-zinc-900 text-white">
         <!-- Header -->
         <header class="gradient-bg">
-            <div class="container mx-auto px-6 py-16">
+            <div class="container mx-auto px-6 py-20">
                 <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 mb-10 md:mb-0">
-                        <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                            Inhumane Government Acknowledgment
+                    <div class="md:w-1/2 mb-12 md:mb-0">
+                        <h1
+                            class="text-5xl md:text-6xl font-bold mb-6 leading-tight"
+                        >
+                            Inhumane Government<br />
+                            <span class="text-zinc-300">Acknowledgment</span>
                         </h1>
-                        <p class="text-xl mb-8 text-zinc-300">
-                            A simple, acknowledge of ongoing human rights
-                            violations by governments worldwide.
+                        <p class="text-xl mb-8 text-zinc-400 leading-relaxed">
+                            A simple, elegant way to acknowledge ongoing human
+                            rights violations by governments worldwide.
                         </p>
                         <div class="flex flex-wrap gap-4">
-                            <a
-                                href="#demo"
-                                class="bg-white text-zinc-900 px-6 py-3 rounded-lg font-semibold hover:bg-zinc-100 transition"
-                                >View Demo</a
-                            >
-                            <a
-                                href="#usage"
-                                class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-zinc-900 transition"
-                                >Get Started</a
-                            >
+                            <a href="#demo" class="btn-primary">
+                                <i class="fas fa-eye mr-2"></i>View Demo
+                            </a>
+                            <a href="#usage" class="btn-secondary">
+                                <i class="fas fa-rocket mr-2"></i>Get Started
+                            </a>
                         </div>
                     </div>
                     <div class="md:w-1/2 flex justify-center">
                         <div class="demo-modal">
                             <div class="modal-header">
                                 <h2
-                                    class="text-2xl font-semibold text-center text-white"
+                                    class="text-2xl font-bold text-center text-white"
                                 >
                                     Please Acknowledge<br />
-                                    These Inhumane Governments
+                                    <span class="text-zinc-300"
+                                        >These Inhumane Governments</span
+                                    >
                                 </h2>
                             </div>
                             <div class="modal-body">
-                                <p class="text-zinc-300 text-center mb-6">
+                                <p
+                                    class="text-zinc-300 text-center mb-8 text-lg leading-relaxed"
+                                >
                                     🇮🇱 Israel committed genocide in 🇵🇸
                                     Palestine<br />
                                     🇷🇺 Russia invaded 🇺🇦 Ukraine<br />
@@ -138,13 +227,13 @@
                                 </p>
                                 <div class="flex gap-4 justify-center">
                                     <a
-                                        href="#"
-                                        class="bg-zinc-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-zinc-700 transition"
+                                        href="https://github.com/InhumaneGov/InhumaneGov.github.io"
+                                        class="bg-zinc-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-zinc-700 transition border border-zinc-700"
                                     >
                                         Learn More
                                     </a>
                                     <button
-                                        class="bg-zinc-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-zinc-600 transition"
+                                        class="bg-zinc-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-zinc-600 transition border border-zinc-600"
                                     >
                                         I Acknowledge
                                     </button>
@@ -153,14 +242,7 @@
                             <div class="modal-footer">
                                 <p class="text-zinc-400 text-center text-sm">
                                     Your acknowledgment helps raise awareness
-                                    about human rights violations<br />Add this
-                                    to your site with a simple script from
-                                    <a
-                                        href="https://inhumanegov.com"
-                                        target="_blank"
-                                        class="text-zinc-300 hover:text-white"
-                                        >inhumanegov.com</a
-                                    >
+                                    about human rights violations
                                 </p>
                             </div>
                         </div>
@@ -170,48 +252,46 @@
         </header>
 
         <!-- Features -->
-        <section class="py-16 bg-zinc-800">
+        <section class="py-20 bg-zinc-800">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12">
-                    Why Add This Acknowledgment to your site?
+                <h2 class="text-4xl font-bold text-center mb-16">
+                    Why Add This Acknowledgment to Your Site?
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="text-center p-6">
+                    <div class="text-center p-8 feature-card">
                         <div
                             class="feature-icon bg-zinc-700 text-white mx-auto"
                         >
                             <i class="fas fa-eye text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">
-                            Raise Awareness
-                        </h3>
-                        <p class="text-zinc-400">
+                        <h3 class="text-2xl font-bold mb-4">Raise Awareness</h3>
+                        <p class="text-zinc-400 leading-relaxed">
                             Help visitors understand ongoing human rights
                             violations by governments around the world.
                         </p>
                     </div>
-                    <div class="text-center p-6">
+                    <div class="text-center p-8 feature-card">
                         <div
                             class="feature-icon bg-zinc-700 text-white mx-auto"
                         >
                             <i class="fas fa-code text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Single File</h3>
-                        <p class="text-zinc-400">
+                        <h3 class="text-2xl font-bold mb-4">Single File</h3>
+                        <p class="text-zinc-400 leading-relaxed">
                             Just add one JavaScript file. No dependencies, no
                             extra CSS files. Simply include and it works.
                         </p>
                     </div>
-                    <div class="text-center p-6">
+                    <div class="text-center p-8 feature-card">
                         <div
                             class="feature-icon bg-zinc-700 text-white mx-auto"
                         >
                             <i class="fas fa-sliders-h text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">
+                        <h3 class="text-2xl font-bold mb-4">
                             Fully Customizable
                         </h3>
-                        <p class="text-zinc-400">
+                        <p class="text-zinc-400 leading-relaxed">
                             Easily customize the message, styling, and behavior
                             with simple data attributes.
                         </p>
@@ -221,43 +301,43 @@
         </section>
 
         <!-- Demo Section -->
-        <section id="demo" class="py-16 bg-zinc-900">
+        <section id="demo" class="py-20 bg-zinc-900">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-6">Live Demo</h2>
-                <p class="text-center text-zinc-400 max-w-2xl mx-auto mb-12">
+                <h2 class="text-4xl font-bold text-center mb-8">Live Demo</h2>
+                <p
+                    class="text-center text-zinc-400 max-w-2xl mx-auto mb-16 text-lg"
+                >
                     The modal below is the actual script running on this page.
                     Acknowledge it once and it won't show again on this site.
                 </p>
 
                 <div
-                    class="bg-zinc-800 rounded-xl border border-zinc-700 p-8 max-w-2xl mx-auto"
+                    class="bg-zinc-800 rounded-2xl border border-zinc-700 p-10 max-w-4xl mx-auto shadow-2xl"
                 >
-                    <div class="mb-6">
-                        <h3 class="text-xl font-semibold mb-4">
-                            Test the Modal
-                        </h3>
-                        <p class="text-zinc-400 mb-4">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-6">Test the Modal</h3>
+                        <p class="text-zinc-400 mb-6 text-lg">
                             If you haven't acknowledged yet, the modal should be
                             visible. Acknowledge it to see how it works.
                         </p>
 
-                        <div class="bg-zinc-700 text-white p-4 rounded-lg mb-4">
-                            <p class="text-sm">
+                        <div
+                            class="bg-zinc-700 text-white p-6 rounded-xl mb-6 border border-zinc-600"
+                        >
+                            <p class="text-base">
                                 Current acknowledgment status:
                                 <span
                                     id="consent-status"
-                                    class="font-mono font-bold"
+                                    class="font-mono font-bold text-lg"
                                     >Checking...</span
                                 >
                             </p>
                         </div>
 
                         <div class="flex gap-4">
-                            <button
-                                id="reset-consent"
-                                class="bg-zinc-700 hover:bg-zinc-600 text-white px-4 py-2 rounded transition"
-                            >
-                                Reset Acknowledgment
+                            <button id="reset-consent" class="btn-primary">
+                                <i class="fas fa-redo mr-2"></i>Reset
+                                Acknowledgment
                             </button>
                         </div>
                     </div>
@@ -266,40 +346,40 @@
         </section>
 
         <!-- Usage -->
-        <section id="usage" class="py-16 bg-zinc-800">
+        <section id="usage" class="py-20 bg-zinc-800">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12">
+                <h2 class="text-4xl font-bold text-center mb-16">
                     Get Started in Seconds
                 </h2>
 
-                <div class="max-w-4xl mx-auto">
-                    <div class="mb-12">
-                        <h3 class="text-2xl font-semibold mb-4">Basic Usage</h3>
-                        <p class="text-zinc-400 mb-6">
+                <div class="max-w-5xl mx-auto">
+                    <div class="mb-16">
+                        <h3 class="text-3xl font-bold mb-6">Basic Usage</h3>
+                        <p class="text-zinc-400 mb-8 text-lg">
                             Just include the script in your HTML. That's it!
                         </p>
 
                         <div class="code-block text-zinc-200">
                             <button class="copy-btn" onclick="copyCode(this)">
-                                Copy
+                                <i class="fas fa-copy mr-1"></i>Copy
                             </button>
-                            <pre><code>&lt;script src="https://inhumanegov.com/acknowledge-modal.js"&gt;&lt;/script&gt;</code></pre>
+                            <pre><code class="text-sm">&lt;script src="https://inhumanegov.com/acknowledge-modal.js"&gt;&lt;/script&gt;</code></pre>
                         </div>
                     </div>
 
-                    <div class="mb-12">
-                        <h3 class="text-2xl font-semibold mb-4">
+                    <div class="mb-16">
+                        <h3 class="text-3xl font-bold mb-6">
                             Custom Configuration
                         </h3>
-                        <p class="text-zinc-400 mb-6">
+                        <p class="text-zinc-400 mb-8 text-lg">
                             Customize the modal with data attributes:
                         </p>
 
                         <div class="code-block text-zinc-200">
                             <button class="copy-btn" onclick="copyCode(this)">
-                                Copy
+                                <i class="fas fa-copy mr-1"></i>Copy
                             </button>
-                            <pre><code>&lt;script
+                            <pre><code class="text-sm">&lt;script
   src="https://inhumanegov.com/acknowledge-modal.js"
   data-expiration-days="730"
   data-message="🇮🇱 Israel is committing genocide in 🇵🇸 Palestine&lt;br /&gt;🇷🇺 Russia is invading 🇺🇦 Ukraine&lt;br /&gt;🇺🇸 US is violating constitutional rights&lt;br /&gt;These governments are inhumane"
@@ -313,58 +393,70 @@
         </section>
 
         <!-- Configuration Options -->
-        <section class="py-16 bg-zinc-900">
+        <section class="py-20 bg-zinc-900">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12">
+                <h2 class="text-4xl font-bold text-center mb-16">
                     Configuration Options
                 </h2>
 
-                <div class="max-w-4xl mx-auto overflow-x-auto">
+                <div class="max-w-5xl mx-auto overflow-x-auto">
                     <table
-                        class="min-w-full bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700"
+                        class="min-w-full bg-zinc-800 rounded-xl overflow-hidden border border-zinc-700 shadow-lg"
                     >
                         <thead class="bg-zinc-700 text-white">
                             <tr>
-                                <th class="py-3 px-4 text-left">Attribute</th>
-                                <th class="py-3 px-4 text-left">Default</th>
-                                <th class="py-3 px-4 text-left">Description</th>
+                                <th class="py-4 px-6 text-left font-bold">
+                                    Attribute
+                                </th>
+                                <th class="py-4 px-6 text-left font-bold">
+                                    Default
+                                </th>
+                                <th class="py-4 px-6 text-left font-bold">
+                                    Description
+                                </th>
                             </tr>
                         </thead>
                         <tbody class="text-zinc-300">
-                            <tr class="border-b border-zinc-700">
-                                <td class="py-3 px-4 font-mono">
+                            <tr
+                                class="border-b border-zinc-700 hover:bg-zinc-750 transition"
+                            >
+                                <td class="py-4 px-6 font-mono text-zinc-200">
                                     data-expiration-days
                                 </td>
-                                <td class="py-3 px-4">365</td>
-                                <td class="py-3 px-4">
+                                <td class="py-4 px-6">365</td>
+                                <td class="py-4 px-6">
                                     How long to remember acknowledgment (in
                                     days)
                                 </td>
                             </tr>
-                            <tr class="border-b border-zinc-700">
-                                <td class="py-3 px-4 font-mono">
+                            <tr
+                                class="border-b border-zinc-700 hover:bg-zinc-750 transition"
+                            >
+                                <td class="py-4 px-6 font-mono text-zinc-200">
                                     data-message
                                 </td>
-                                <td class="py-3 px-4">
+                                <td class="py-4 px-6">
                                     Default acknowledgment message
                                 </td>
-                                <td class="py-3 px-4">
+                                <td class="py-4 px-6">
                                     Custom message text (HTML allowed)
                                 </td>
                             </tr>
-                            <tr class="border-b border-zinc-700">
-                                <td class="py-3 px-4 font-mono">
+                            <tr
+                                class="border-b border-zinc-700 hover:bg-zinc-750 transition"
+                            >
+                                <td class="py-4 px-6 font-mono text-zinc-200">
                                     data-accept-text
                                 </td>
-                                <td class="py-3 px-4">I Acknowledge</td>
-                                <td class="py-3 px-4">Accept button text</td>
+                                <td class="py-4 px-6">I Acknowledge</td>
+                                <td class="py-4 px-6">Accept button text</td>
                             </tr>
-                            <tr>
-                                <td class="py-3 px-4 font-mono">
+                            <tr class="hover:bg-zinc-750 transition">
+                                <td class="py-4 px-6 font-mono text-zinc-200">
                                     data-learn-more-url
                                 </td>
-                                <td class="py-3 px-4">Cited Reports</td>
-                                <td class="py-3 px-4">
+                                <td class="py-4 px-6">Cited Reports</td>
+                                <td class="py-4 px-6">
                                     URL for learn more page (opens in new tab)
                                 </td>
                             </tr>
@@ -375,42 +467,99 @@
         </section>
 
         <!-- Footer -->
-        <footer class="bg-zinc-800 text-white py-12">
+        <footer class="bg-zinc-800 text-white py-16">
             <div class="container mx-auto px-6">
                 <div
-                    class="flex flex-col md:flex-row justify-between items-center"
+                    class="flex flex-col lg:flex-row justify-between items-start gap-12"
                 >
-                    <div class="mb-6 md:mb-0">
-                        <h3 class="text-xl font-bold">
+                    <div class="lg:w-1/3">
+                        <h3 class="text-2xl font-bold mb-4">
                             Inhumane Government Acknowledgment
                         </h3>
-                        <p class="text-zinc-400 mt-2">
+                        <p class="text-zinc-400 mb-6 leading-relaxed">
                             Raising awareness about current human rights
-                            violations
+                            violations through a simple, elegant web component.
                         </p>
+                        <div class="flex space-x-4">
+                            <a
+                                href="https://github.com/InhumaneGov/InhumaneGov.github.io"
+                                class="text-zinc-400 hover:text-white transition text-2xl"
+                                title="GitHub Repository"
+                            >
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a
+                                href="mailto:contact@inhumanegov.com"
+                                class="text-zinc-400 hover:text-white transition text-2xl"
+                                title="Contact Us"
+                            >
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="flex space-x-6">
+
+                    <div class="lg:w-1/3">
+                        <h4 class="text-lg font-bold mb-4">
+                            Contribute & Improve
+                        </h4>
+                        <p class="text-zinc-400 mb-4">
+                            This project is open source and welcomes
+                            contributions.
+                        </p>
                         <a
-                            href="#"
-                            class="text-zinc-400 hover:text-white transition"
+                            href="https://github.com/InhumaneGov/InhumaneGov.github.io"
+                            class="inline-flex items-center text-zinc-300 hover:text-white transition font-medium"
                         >
-                            <i class="fab fa-github text-2xl"></i>
+                            <i class="fab fa-github mr-2"></i>
+                            View on GitHub
                         </a>
+                    </div>
+
+                    <div class="lg:w-1/3">
+                        <h4 class="text-lg font-bold mb-4">License</h4>
+                        <p class="text-zinc-400 mb-4">
+                            This project is licensed under Creative Commons
+                            Attribution 4.0 International.
+                        </p>
                         <a
-                            href="#"
-                            class="text-zinc-400 hover:text-white transition"
+                            href="https://creativecommons.org/licenses/by/4.0/"
+                            class="inline-flex items-center text-zinc-300 hover:text-white transition font-medium"
+                            target="_blank"
                         >
-                            <i class="fas fa-envelope text-2xl"></i>
+                            <i class="fab fa-creative-commons mr-2"></i>
+                            CC BY 4.0
                         </a>
                     </div>
                 </div>
+
+                <div class="section-divider"></div>
+
                 <div
-                    class="border-t border-zinc-700 mt-8 pt-8 text-center text-zinc-400"
+                    class="flex flex-col md:flex-row justify-between items-center text-center md:text-left"
                 >
-                    <p>
-                        &copy; 2025 Inhumane Government Acknowledgment. Open
-                        source project.
-                    </p>
+                    <div class="mb-4 md:mb-0">
+                        <p class="text-zinc-500 text-sm">
+                            &copy; 2025 Inhumane Government Acknowledgment.
+                            <a
+                                href="https://creativecommons.org/licenses/by/4.0/"
+                                class="text-zinc-400 hover:text-white transition"
+                                target="_blank"
+                            >
+                                CC BY 4.0
+                            </a>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-zinc-500 text-sm">
+                            Help improve this project on
+                            <a
+                                href="https://github.com/InhumaneGov/InhumaneGov.github.io"
+                                class="text-zinc-400 hover:text-white transition"
+                            >
+                                GitHub
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </footer>
@@ -428,10 +577,10 @@
                 document.body.removeChild(textArea);
 
                 // Visual feedback
-                const originalText = button.textContent;
-                button.textContent = "Copied!";
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check mr-1"></i>Copied!';
                 setTimeout(() => {
-                    button.textContent = originalText;
+                    button.innerHTML = originalText;
                 }, 2000);
             }
 
@@ -446,9 +595,12 @@
                     document.getElementById("consent-status").textContent =
                         "Not acknowledged";
 
-                    alert("Acknowledgment has been reset.");
+                    alert(
+                        "Acknowledgment has been reset. The page will now refresh.",
+                    );
                     location.reload();
                 });
+
             // Initialize consent status
             window.addEventListener("load", function () {
                 const hasConsent = document.cookie.includes("inhumanegov=true");
