@@ -265,12 +265,6 @@
                             >
                                 Reset Acknowledgment
                             </button>
-                            <button
-                                id="check-consent"
-                                class="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded transition"
-                            >
-                                Check Status
-                            </button>
                         </div>
                     </div>
 
@@ -338,7 +332,7 @@
   data-expiration-days="730"
   data-message="🇮🇱 Israel is committing genocide in 🇵🇸 Palestine&lt;br /&gt;🇷🇺 Russia is invading 🇺🇦 Ukraine&lt;br /&gt;🇺🇸 US is violating constitutional rights&lt;br /&gt;These governments are inhumane"
   data-accept-text="I Acknowledge"
-  data-learn-more-url="https://www.ohchr.org/en/press-releases/2025/09/israel-has-committed-genocide-gaza-strip-un-commission-finds"&gt;
+  data-learn-more-url="https://inhumanegov.com/news"&gt;
 &lt;/script&gt;</code></pre>
                         </div>
                     </div>
@@ -397,7 +391,7 @@
                                 <td class="py-3 px-4 font-mono">
                                     data-learn-more-url
                                 </td>
-                                <td class="py-3 px-4">OHCHR Report</td>
+                                <td class="py-3 px-4">Cited Reports</td>
                                 <td class="py-3 px-4">
                                     URL for learn more page (opens in new tab)
                                 </td>
@@ -419,7 +413,8 @@
                             Inhumane Government Acknowledgment
                         </h3>
                         <p class="text-gray-400 mt-2">
-                            Raising awareness about human rights violations
+                            Raising awareness about current human rights
+                            violations
                         </p>
                     </div>
                     <div class="flex space-x-6">
@@ -482,16 +477,6 @@
                         "Acknowledgment has been reset. Refresh the page to see the modal again.",
                     );
                 });
-
-            document
-                .getElementById("check-consent")
-                .addEventListener("click", function () {
-                    const hasConsent =
-                        document.cookie.includes("inhumanegov=true");
-                    document.getElementById("consent-status").textContent =
-                        hasConsent ? "Acknowledged" : "Not acknowledged";
-                });
-
             // Initialize consent status
             window.addEventListener("load", function () {
                 const hasConsent = document.cookie.includes("inhumanegov=true");
