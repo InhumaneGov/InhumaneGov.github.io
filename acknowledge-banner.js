@@ -5,12 +5,9 @@
   const config = {
     cookieName: "inhumanegov",
     expirationDays: 365,
-    position: "bottom",
-    theme: "light",
     message:
       "🇮🇱 Israel is committing genocide in 🇵🇸 Palestine<br />🇷🇺 Russia is invading 🇺🇦 Ukraine,<br />🇺🇸 US is violating constitutional rights,<br />These governments are inhumane",
     acceptText: "I Acknowledge",
-    learnMoreText: "Learn More",
     learnMoreUrl:
       "https://www.ohchr.org/en/press-releases/2025/09/israel-has-committed-genocide-gaza-strip-un-commission-finds",
     zIndex: 10000,
@@ -20,7 +17,7 @@
   function loadConfig() {
     const script =
       document.currentScript ||
-      document.querySelector('script[src*="acknowledge-banner.js"]');
+      document.querySelector('script[src*="acknowledge-modal.js"]');
     if (script) {
       Object.keys(config).forEach((key) => {
         const dataKey = key.replace(/([A-Z])/g, "-$1").toLowerCase();
@@ -63,242 +60,180 @@
   // Create and inject styles
   function injectStyles() {
     const css = `
-            .consent-banner {
-                position: fixed;
-                left: 0;
-                right: 0;
-                background: ${config.theme === "dark" ? "#333" : "#fff"};
-                border-top: 1px solid ${config.theme === "dark" ? "#555" : "#e0e0e0"};
-                padding: 20px;
-                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-                z-index: ${config.zIndex};
-                transition: all 0.3s ease;
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            }
+      .consent-modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: ${config.zIndex};
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
 
-            .consent-banner-bottom {
-                bottom: 0;
-            }
+      .consent-modal-content {
+        background: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 30px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        color: #fff;
+        position: relative;
+      }
 
-            .consent-banner-top {
-                top: 0;
-                border-top: none;
-                border-bottom: 1px solid ${config.theme === "dark" ? "#555" : "#e0e0e0"};
-            }
+      .consent-message {
+        margin: 0 0 25px 0;
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: center;
+      }
 
-            .consent-banner.hidden {
-                opacity: 0;
-                transform: translateY(100%);
-                pointer-events: none;
-            }
+      .consent-buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+      }
 
-            .consent-content {
-                max-width: 1200px;
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 20px;
-            }
+      .consent-btn {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        min-width: 120px;
+      }
 
-            .consent-message {
-                margin: 0;
-                flex: 1;
-                color: ${config.theme === "dark" ? "#fff" : "#333"};
-                font-size: 14px;
-                line-height: 1.4;
-            }
+      .consent-btn-primary {
+        background: #2563eb;
+        color: white;
+      }
 
-            .consent-buttons {
-                display: flex;
-                gap: 10px;
-                flex-shrink: 0;
-            }
+      .consent-btn-primary:hover {
+        background: #1d4ed8;
+        transform: translateY(-1px);
+      }
 
-            .consent-btn {
-                padding: 10px 20px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 14px;
-                font-weight: 500;
-                transition: all 0.2s ease;
-            }
+      .consent-btn-secondary {
+        background: #374151;
+        color: #fff;
+        border: 1px solid #4b5563;
+      }
 
-            .consent-btn-primary {
-                background: #007cba;
-                color: white;
-            }
+      .consent-btn-secondary:hover {
+        background: #4b5563;
+        transform: translateY(-1px);
+      }
 
-            .consent-btn-primary:hover {
-                background: #005a87;
-            }
+      .consent-learn-more-link {
+        color: #60a5fa;
+        text-decoration: none;
+        font-weight: 500;
+      }
 
-            .consent-btn-secondary {
-                background: transparent;
-                color: #007cba;
-                border: 1px solid #007cba;
-            }
+      .consent-learn-more-link:hover {
+        text-decoration: underline;
+      }
 
-            .consent-btn-secondary:hover {
-                background: #f0f8ff;
-            }
+      @media (max-width: 768px) {
+        .consent-modal-content {
+          padding: 20px;
+        }
 
-            .consent-modal {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0,0,0,0.5);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: ${config.zIndex + 1};
-                padding: 20px;
-            }
+        .consent-buttons {
+          flex-direction: column;
+        }
 
-            .consent-modal-content {
-                background: white;
-                padding: 30px;
-                border-radius: 8px;
-                max-width: 500px;
-                max-height: 80vh;
-                overflow-y: auto;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            }
+        .consent-btn {
+          width: 100%;
+        }
+      }
 
-            .consent-modal-close {
-                background: #007cba;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 4px;
-                cursor: pointer;
-                margin-top: 20px;
-            }
+      @media (max-width: 480px) {
+        .consent-modal-backdrop {
+          padding: 10px;
+        }
 
-            @media (max-width: 768px) {
-                .consent-content {
-                    flex-direction: column;
-                    text-align: center;
-                    gap: 15px;
-                }
-
-                .consent-buttons {
-                    width: 100%;
-                    justify-content: center;
-                }
-
-                .consent-banner {
-                    padding: 15px;
-                }
-            }
-
-            @media (max-width: 480px) {
-                .consent-buttons {
-                    flex-direction: column;
-                }
-
-                .consent-btn {
-                    width: 100%;
-                }
-            }
-        `;
+        .consent-message {
+          font-size: 14px;
+        }
+      }
+    `;
 
     const style = document.createElement("style");
     style.textContent = css;
     document.head.appendChild(style);
   }
 
-  // Create banner HTML
-  function createBanner() {
-    const banner = document.createElement("div");
-    banner.className = `consent-banner consent-banner-${config.position}`;
-    banner.id = "consent-banner";
-
-    banner.innerHTML = `
-            <div class="consent-content">
-                <p class="consent-message">${config.message}</p>
-                <div class="consent-buttons">
-                    ${config.learnMoreUrl ? `<button class="consent-btn consent-btn-secondary" id="consent-learn-more">${config.learnMoreText}</button>` : ""}
-                    <button class="consent-btn consent-btn-primary" id="consent-accept">${config.acceptText}</button>
-                </div>
-            </div>
-        `;
-
-    return banner;
-  }
-
-  // Create modal for learn more
+  // Create modal HTML
   function createModal() {
     const modal = document.createElement("div");
-    modal.className = "consent-modal";
+    modal.className = "consent-modal-backdrop";
+    modal.id = "consent-modal";
+
     modal.innerHTML = `
-            <div class="consent-modal-content">
-                <h3>Privacy & Cookies</h3>
-                <p>This website uses cookies to ensure you get the best experience on our website. For more information, please visit our <a href="${config.learnMoreUrl}" target="_blank">Privacy Policy</a>.</p>
-                <p>Cookies are small text files that are stored on your device when you visit websites. They help us understand how you use our site and improve your experience.</p>
-                <button class="consent-modal-close" id="consent-modal-close">Close</button>
-            </div>
-        `;
+      <div class="consent-modal-content">
+        <p class="consent-message">${config.message}</p>
+        <div class="consent-buttons">
+          ${
+            config.learnMoreUrl
+              ? `<a href="${config.learnMoreUrl}" target="_blank" class="consent-btn consent-btn-secondary consent-learn-more-link">
+              Learn More
+            </a>`
+              : ""
+          }
+          <button class="consent-btn consent-btn-primary" id="consent-accept">
+            ${config.acceptText}
+          </button>
+        </div>
+      </div>
+    `;
 
     return modal;
   }
 
-  // Show the banner
-  function showBanner() {
-    const banner = createBanner();
-    document.body.appendChild(banner);
+  // Show the modal
+  function showModal() {
+    const modal = createModal();
+    document.body.appendChild(modal);
 
     // Add event listeners
     document
       .getElementById("consent-accept")
       .addEventListener("click", function () {
         setConsent();
-        hideBanner(banner);
+        hideModal(modal);
       });
 
-    if (config.learnMoreUrl) {
-      document
-        .getElementById("consent-learn-more")
-        .addEventListener("click", function () {
-          showModal();
-        });
-    }
+    // Close modal when clicking on backdrop
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        hideModal(modal);
+      }
+    });
 
-    // Prevent body scroll behind modal if needed
+    // Prevent body scroll
     document.body.style.overflow = "hidden";
   }
 
-  // Hide the banner with animation
-  function hideBanner(banner) {
-    banner.classList.add("hidden");
+  // Hide the modal
+  function hideModal(modal) {
+    modal.style.opacity = "0";
+    modal.style.transition = "opacity 0.3s ease";
+
     setTimeout(() => {
-      if (banner.parentNode) {
-        banner.parentNode.removeChild(banner);
+      if (modal.parentNode) {
+        modal.parentNode.removeChild(modal);
       }
       document.body.style.overflow = "";
     }, 300);
-  }
-
-  // Show modal
-  function showModal() {
-    const modal = createModal();
-    document.body.appendChild(modal);
-
-    document
-      .getElementById("consent-modal-close")
-      .addEventListener("click", function () {
-        document.body.removeChild(modal);
-      });
-
-    // Close modal when clicking outside
-    modal.addEventListener("click", function (e) {
-      if (e.target === modal) {
-        document.body.removeChild(modal);
-      }
-    });
   }
 
   // Initialize everything
@@ -316,16 +251,16 @@
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", function () {
         injectStyles();
-        showBanner();
+        showModal();
       });
     } else {
       injectStyles();
-      showBanner();
+      showModal();
     }
   }
 
   // Expose public API
-  window.ConsentBanner = {
+  window.ConsentModal = {
     init: init,
     hasConsent: hasConsent,
     setConsent: setConsent,
