@@ -20,7 +20,7 @@
   function loadConfig() {
     const script =
       document.currentScript ||
-      document.querySelector('script[src*="consent-banner.js"]');
+      document.querySelector('script[src*="acknowledge-banner.js"]');
     if (script) {
       Object.keys(config).forEach((key) => {
         const dataKey = key.replace(/([A-Z])/g, "-$1").toLowerCase();

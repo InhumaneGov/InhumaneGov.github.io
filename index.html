@@ -281,40 +281,6 @@
 &lt;/script&gt;</code></pre>
                         </div>
                     </div>
-
-                    <div class="mb-12">
-                        <h3 class="text-2xl font-semibold mb-4">
-                            Listening for Consent
-                        </h3>
-                        <p class="text-gray-600 mb-6">
-                            Load third-party scripts only after consent is
-                            given:
-                        </p>
-
-                        <div class="code-block text-gray-200">
-                            <button class="copy-btn" onclick="copyCode(this)">
-                                Copy
-                            </button>
-                            <pre><code>&lt;script&gt;
-  // Check if consent already given
-  if (window.ConsentBanner && window.ConsentBanner.hasConsent()) {
-    loadAnalytics();
-  }
-
-  // Listen for new consent
-  window.addEventListener('consentGranted', function() {
-    loadAnalytics();
-    loadChatWidget();
-    // Other consent-dependent scripts
-  });
-
-  function loadAnalytics() {
-    // Your analytics code here
-    console.log('Loading analytics...');
-  }
-&lt;/script&gt;</code></pre>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
