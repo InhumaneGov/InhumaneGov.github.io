@@ -445,9 +445,9 @@
                         "inhumanegov=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                     document.getElementById("consent-status").textContent =
                         "Not acknowledged";
-                    alert(
-                        "Acknowledgment has been reset. Refresh the page to see the modal again.",
-                    );
+
+                    alert("Acknowledgment has been reset.");
+                    location.reload();
                 });
             // Initialize consent status
             window.addEventListener("load", function () {
