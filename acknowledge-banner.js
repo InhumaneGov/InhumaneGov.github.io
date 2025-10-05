@@ -289,7 +289,7 @@
     modal.innerHTML = `
       <div class="consent-modal-content">
         <div class="consent-header">
-          <h2 class="consent-title">Please Acknowledge These Inhumane Governments</h2>
+          <h2 class="consent-title">Please Acknowledge<br />These Inhumane Governments</h2>
         </div>
         <div class="consent-body">
           <p class="consent-message">${config.message}</p>
@@ -307,7 +307,9 @@
           </div>
         </div>
         <div class="consent-footer">
-          <p class="consent-footer-text">Your acknowledgment helps raise awareness about human rights violations</p>
+          <p class="consent-footer-text">
+            Your acknowledgment helps raise awareness about human rights violations<br />Add this to your site with a simple script from <a href="https://inhumanegov.com" target="_blank">inhumanegov.com</a>
+          </p>
         </div>
       </div>
     `;
