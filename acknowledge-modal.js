@@ -66,6 +66,7 @@
         right: 0;
         bottom: 0;
         background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -92,34 +93,25 @@
       }
 
       .consent-modal-content {
-        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
+        background: #0a0a0a;
         border: 1px solid #333;
-        border-radius: 12px;
-        padding: 0;
-        max-width: 520px;
+        border-radius: 16px;
+        max-width: 540px;
         width: 100%;
-        box-shadow:
-          0 20px 40px rgba(0, 0, 0, 0.4),
-          0 0 0 1px rgba(255, 255, 255, 0.03);
-        color: #fff;
-        position: relative;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
         overflow: hidden;
+        transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+        transition: transform 0.3s ease;
         animation: slideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
 
-      .consent-modal-content::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #444, transparent);
+      .consent-modal-content:hover {
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
       }
 
       .consent-header {
-        background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
-        padding: 30px 30px 20px 30px;
+        background: #111;
+        padding: 2rem 2rem 1.5rem 2rem;
         border-bottom: 1px solid #333;
         position: relative;
       }
@@ -130,30 +122,29 @@
         bottom: -1px;
         left: 50%;
         transform: translateX(-50%);
-        width: 100px;
-        height: 2px;
+        width: 120px;
+        height: 3px;
         background: linear-gradient(90deg, transparent, #666, transparent);
       }
 
       .consent-title {
         margin: 0;
-        font-size: 24px;
-        font-weight: 600;
+        font-size: 2rem;
+        font-weight: 700;
         text-align: center;
         color: #f5f5f5;
         letter-spacing: -0.5px;
         line-height: 1.3;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
       }
 
       .consent-body {
-        padding: 30px;
-        background: rgba(10, 10, 10, 0.5);
+        padding: 2rem;
+        background: #0a0a0a;
       }
 
       .consent-message {
-        margin: 0 0 30px 0;
-        font-size: 16px;
+        margin: 0 0 2rem 0;
+        font-size: 1.125rem;
         line-height: 1.7;
         text-align: center;
         color: #d4d4d4;
@@ -162,45 +153,45 @@
 
       .consent-buttons {
         display: flex;
-        gap: 15px;
+        gap: 1rem;
         justify-content: center;
         align-items: center;
       }
 
       .consent-btn {
-        padding: 14px 28px;
+        padding: 0.75rem 1.5rem;
         border: none;
-        border-radius: 8px;
+        border-radius: 0.75rem;
         cursor: pointer;
-        font-size: 15px;
-        font-weight: 500;
-        transition: all 0.2s ease;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
         min-width: 140px;
-        position: relative;
+        border: 1px solid;
       }
 
       .consent-btn-primary {
-        background: linear-gradient(135deg, #404040 0%, #262626 100%);
+        background: #1a1a1a;
         color: #fff;
-        border: 1px solid #555;
+        border-color: #444;
       }
 
       .consent-btn-primary:hover {
-        background: linear-gradient(135deg, #4a4a4a 0%, #333 100%);
-        transform: translateY(-1px);
-        border-color: #666;
+        background: #2a2a2a;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       }
 
       .consent-btn-secondary {
-        background: linear-gradient(135deg, #262626 0%, #1a1a1a 100%);
+        background: transparent;
         color: #d4d4d4;
-        border: 1px solid #444;
+        border-color: #444;
       }
 
       .consent-btn-secondary:hover {
-        background: linear-gradient(135deg, #333 0%, #262626 100%);
-        transform: translateY(-1px);
-        border-color: #555;
+        background: #1a1a1a;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       }
 
       .consent-learn-more-link {
@@ -211,34 +202,54 @@
       }
 
       .consent-footer {
-        padding: 20px 30px;
-        background: rgba(10, 10, 10, 0.7);
+        padding: 1.5rem 2rem;
+        background: #111;
         border-top: 1px solid #333;
         text-align: center;
       }
 
       .consent-footer-text {
         margin: 0;
-        font-size: 13px;
+        font-size: 0.875rem;
         color: #888;
         font-weight: 400;
+        line-height: 1.5;
+      }
+
+      .consent-footer-link {
+        color: #d4d4d4;
+        text-decoration: none;
+      }
+
+      .consent-footer-link:hover {
+        color: #fff;
+        text-decoration: underline;
       }
 
       @media (max-width: 768px) {
         .consent-modal-content {
           max-width: 90vw;
+          transform: none;
+        }
+
+        .consent-modal-content:hover {
+          transform: none;
         }
 
         .consent-header {
-          padding: 25px 20px 15px 20px;
+          padding: 1.5rem 1.5rem 1rem 1.5rem;
         }
 
         .consent-body {
-          padding: 25px 20px;
+          padding: 1.5rem;
         }
 
         .consent-title {
-          font-size: 22px;
+          font-size: 1.75rem;
+        }
+
+        .consent-message {
+          font-size: 1rem;
         }
 
         .consent-buttons {
@@ -251,7 +262,7 @@
         }
 
         .consent-footer {
-          padding: 15px 20px;
+          padding: 1rem 1.5rem;
         }
       }
 
@@ -261,15 +272,15 @@
         }
 
         .consent-title {
-          font-size: 20px;
+          font-size: 1.5rem;
         }
 
         .consent-message {
-          font-size: 15px;
+          font-size: 0.95rem;
         }
 
         .consent-btn {
-          padding: 12px 20px;
+          padding: 0.75rem 1rem;
         }
       }
     `;
@@ -288,7 +299,7 @@
     modal.innerHTML = `
       <div class="consent-modal-content">
         <div class="consent-header">
-          <h2 class="consent-title">Please Acknowledge<br />These Inhumane Governments</h2>
+          <h2 class="consent-title">Please Acknowledge<br /><span style="color: #a3a3a3; font-size: 0.9em;">These Inhumane Governments</span></h2>
         </div>
         <div class="consent-body">
           <p class="consent-message">${config.message}</p>
@@ -307,7 +318,9 @@
         </div>
         <div class="consent-footer">
           <p class="consent-footer-text">
-            Your acknowledgment helps raise awareness about human rights violations<br />Add this to your site with a simple script from <a href="https://inhumanegov.com" target="_blank">inhumanegov.com</a>
+            Your acknowledgment helps raise awareness about human rights violations<br />
+            Add this to your site with a simple script from
+            <a href="https://inhumanegov.com" target="_blank" class="consent-footer-link">inhumanegov.com</a>
           </p>
         </div>
       </div>
