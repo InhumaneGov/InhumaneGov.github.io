@@ -8,10 +8,11 @@
     position: "bottom",
     theme: "light",
     message:
-      "🇮🇱 Isrial is commiting genocide in 🇵🇸 Palestine, 🇷🇺 Russia is invading 🇺🇦 Ukraine, The 🇺🇸 US is violating constitutional protected rights, These governments are inhumane",
-    acceptText: "I Agree",
+      "🇮🇱 Isrial is commiting genocide in 🇵🇸 Palestine<br />🇷🇺 Russia is invading 🇺🇦 Ukraine,<br />The 🇺🇸 US is violating constitutional protected rights,<br />These governments are inhumane",
+    acceptText: "I Acknowledge",
     learnMoreText: "Learn More",
-    learnMoreUrl: "/privacy",
+    learnMoreUrl:
+      "https://www.ohchr.org/en/press-releases/2025/09/israel-has-committed-genocide-gaza-strip-un-commission-finds",
     zIndex: 10000,
   };
 
