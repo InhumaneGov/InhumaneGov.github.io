@@ -4,7 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>
-            Inhumane Goverment - A Simple Acknowledgement of Inhumane Goverments
+            Inhumane Government - A Simple Acknowledgement of Inhumane
+            Governments
         </title>
         <meta
             name="description"
@@ -17,20 +18,26 @@
         />
         <style>
             .gradient-bg {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: linear-gradient(
+                    135deg,
+                    #0a0a0a 0%,
+                    #1a1a1a 50%,
+                    #2d2d2d 100%
+                );
             }
             .code-block {
                 background: #1a202c;
                 border-radius: 0.5rem;
                 padding: 1.5rem;
                 position: relative;
+                border: 1px solid #333;
             }
             .copy-btn {
                 position: absolute;
                 top: 0.5rem;
                 right: 0.5rem;
                 background: rgba(255, 255, 255, 0.1);
-                border: none;
+                border: 1px solid #444;
                 color: white;
                 padding: 0.25rem 0.5rem;
                 border-radius: 0.25rem;
@@ -46,64 +53,115 @@
                 border-radius: 0.75rem;
                 margin-bottom: 1rem;
             }
-            .demo-section {
-                min-height: 400px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            .demo-modal {
+                background: linear-gradient(
+                    135deg,
+                    #0a0a0a 0%,
+                    #1a1a1a 50%,
+                    #2d2d2d 100%
+                );
+                border: 1px solid #333;
+                border-radius: 12px;
+                max-width: 520px;
+                width: 100%;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+                overflow: hidden;
+            }
+            .modal-header {
+                background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+                padding: 30px 30px 20px 30px;
+                border-bottom: 1px solid #333;
+                position: relative;
+            }
+            .modal-header::after {
+                content: "";
+                position: absolute;
+                bottom: -1px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 2px;
+                background: linear-gradient(
+                    90deg,
+                    transparent,
+                    #666,
+                    transparent
+                );
+            }
+            .modal-body {
+                padding: 30px;
+                background: rgba(10, 10, 10, 0.5);
+            }
+            .modal-footer {
+                padding: 20px 30px;
+                background: rgba(10, 10, 10, 0.7);
+                border-top: 1px solid #333;
             }
         </style>
     </head>
-    <body class="bg-gray-50">
+    <body class="bg-gray-900 text-white">
         <!-- Header -->
-        <header class="gradient-bg text-white">
+        <header class="gradient-bg">
             <div class="container mx-auto px-6 py-16">
                 <div class="flex flex-col md:flex-row items-center">
                     <div class="md:w-1/2 mb-10 md:mb-0">
                         <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                            Consent Banner
+                            Inhumane Government Acknowledgment
                         </h1>
-                        <p class="text-xl mb-8 text-blue-100">
-                            A simple, lightweight cookie consent solution that
-                            just works.
+                        <p class="text-xl mb-8 text-gray-300">
+                            A simple, elegant modal to acknowledge ongoing human
+                            rights violations by governments worldwide.
                         </p>
                         <div class="flex flex-wrap gap-4">
                             <a
                                 href="#demo"
-                                class="bg-white text-purple-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
-                                >Try Demo</a
+                                class="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+                                >View Demo</a
                             >
                             <a
                                 href="#usage"
-                                class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-700 transition"
+                                class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition"
                                 >Get Started</a
                             >
                         </div>
                     </div>
                     <div class="md:w-1/2 flex justify-center">
-                        <div
-                            class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl shadow-xl max-w-md"
-                        >
-                            <div
-                                class="bg-white text-gray-800 p-4 rounded-lg shadow"
-                            >
-                                <p class="mb-4 text-sm">
-                                    We use cookies to enhance your experience.
-                                    By continuing to visit this site you agree
-                                    to our use of cookies.
+                        <div class="demo-modal">
+                            <div class="modal-header">
+                                <h2
+                                    class="text-2xl font-semibold text-center text-white"
+                                >
+                                    Please Acknowledge These Inhumane
+                                    Governments
+                                </h2>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-gray-300 text-center mb-6">
+                                    🇮🇱 Israel is committing genocide in 🇵🇸
+                                    Palestine<br />
+                                    🇷🇺 Russia is invading 🇺🇦 Ukraine<br />
+                                    🇺🇸 US is violating constitutional rights<br />
+                                    These governments are inhumane
                                 </p>
-                                <div class="flex justify-between">
-                                    <button
-                                        class="text-purple-600 text-sm font-medium"
+                                <div class="flex gap-4 justify-center">
+                                    <a
+                                        href="#"
+                                        class="bg-gray-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-600 transition"
                                     >
                                         Learn More
-                                    </button>
+                                    </a>
                                     <button
-                                        class="bg-purple-600 text-white px-4 py-2 rounded text-sm font-medium"
+                                        class="bg-gray-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-500 transition"
                                     >
-                                        I Understand
+                                        I Acknowledge
                                     </button>
                                 </div>
+                            </div>
+                            <div class="modal-footer">
+                                <p class="text-gray-400 text-center text-sm">
+                                    Your acknowledgment helps raise awareness
+                                    about human rights violations
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -112,50 +170,50 @@
         </header>
 
         <!-- Features -->
-        <section class="py-16 bg-white">
+        <section class="py-16 bg-gray-800">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12">
-                    Why Choose Consent Banner?
+                    Why Add This Acknowledgment?
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="text-center p-6">
                         <div
-                            class="feature-icon bg-purple-100 text-purple-600 mx-auto"
+                            class="feature-icon bg-gray-700 text-white mx-auto"
                         >
-                            <i class="fas fa-file-code text-2xl"></i>
+                            <i class="fas fa-eye text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Raise Awareness
+                        </h3>
+                        <p class="text-gray-400">
+                            Help visitors understand ongoing human rights
+                            violations by governments around the world.
+                        </p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div
+                            class="feature-icon bg-gray-700 text-white mx-auto"
+                        >
+                            <i class="fas fa-code text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-semibold mb-2">Single File</h3>
-                        <p class="text-gray-600">
+                        <p class="text-gray-400">
                             Just one JavaScript file. No dependencies, no extra
                             CSS files. Simply include and it works.
                         </p>
                     </div>
                     <div class="text-center p-6">
                         <div
-                            class="feature-icon bg-blue-100 text-blue-600 mx-auto"
-                        >
-                            <i class="fas fa-cookie-bite text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">
-                            First-Party Only
-                        </h3>
-                        <p class="text-gray-600">
-                            Uses first-party cookies only. No cross-site
-                            tracking. Compliant with privacy regulations.
-                        </p>
-                    </div>
-                    <div class="text-center p-6">
-                        <div
-                            class="feature-icon bg-green-100 text-green-600 mx-auto"
+                            class="feature-icon bg-gray-700 text-white mx-auto"
                         >
                             <i class="fas fa-sliders-h text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-semibold mb-2">
                             Fully Customizable
                         </h3>
-                        <p class="text-gray-600">
-                            Easily customize appearance, text, and behavior with
-                            simple data attributes.
+                        <p class="text-gray-400">
+                            Easily customize the message, styling, and behavior
+                            with simple data attributes.
                         </p>
                     </div>
                 </div>
@@ -163,30 +221,29 @@
         </section>
 
         <!-- Demo Section -->
-        <section id="demo" class="demo-section py-16 bg-gray-100">
+        <section id="demo" class="py-16 bg-gray-900">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-6">Live Demo</h2>
-                <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-                    The consent banner below is the actual script running on
-                    this page. Accept it once and it won't show again on this
-                    site.
+                <p class="text-center text-gray-400 max-w-2xl mx-auto mb-12">
+                    The modal below is the actual script running on this page.
+                    Acknowledge it once and it won't show again on this site.
                 </p>
 
                 <div
-                    class="bg-white rounded-xl shadow-lg p-8 max-w-2xl mx-auto"
+                    class="bg-gray-800 rounded-xl border border-gray-700 p-8 max-w-2xl mx-auto"
                 >
                     <div class="mb-6">
                         <h3 class="text-xl font-semibold mb-4">
-                            Test the Banner
+                            Test the Modal
                         </h3>
-                        <p class="text-gray-600 mb-4">
-                            If you haven't accepted cookies yet, the banner
-                            should be visible. Accept it to see how it works.
+                        <p class="text-gray-400 mb-4">
+                            If you haven't acknowledged yet, the modal should be
+                            visible. Acknowledge it to see how it works.
                         </p>
 
-                        <div class="bg-gray-800 text-white p-4 rounded-lg mb-4">
+                        <div class="bg-gray-700 text-white p-4 rounded-lg mb-4">
                             <p class="text-sm">
-                                Current consent status:
+                                Current acknowledgment status:
                                 <span
                                     id="consent-status"
                                     class="font-mono font-bold"
@@ -198,34 +255,35 @@
                         <div class="flex gap-4">
                             <button
                                 id="reset-consent"
-                                class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition"
+                                class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded transition"
                             >
-                                Reset Consent
+                                Reset Acknowledgment
                             </button>
                             <button
                                 id="check-consent"
-                                class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition"
+                                class="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded transition"
                             >
                                 Check Status
                             </button>
                         </div>
                     </div>
 
-                    <div class="border-t pt-6">
+                    <div class="border-t border-gray-700 pt-6">
                         <h3 class="text-xl font-semibold mb-4">
                             Event Listening Example
                         </h3>
-                        <p class="text-gray-600 mb-4">
-                            Other scripts can listen for the consent event. Try
-                            accepting the banner and watch the counter below:
+                        <p class="text-gray-400 mb-4">
+                            Other scripts can listen for the acknowledgment
+                            event. Try accepting the modal and watch the counter
+                            below:
                         </p>
 
-                        <div class="bg-gray-100 p-4 rounded-lg">
+                        <div class="bg-gray-700 p-4 rounded-lg">
                             <p class="text-sm font-medium">
-                                Consent granted events detected:
+                                Acknowledgment events detected:
                                 <span
                                     id="event-counter"
-                                    class="font-mono font-bold text-purple-600"
+                                    class="font-mono font-bold text-white"
                                     >0</span
                                 >
                             </p>
@@ -236,7 +294,7 @@
         </section>
 
         <!-- Usage -->
-        <section id="usage" class="py-16 bg-white">
+        <section id="usage" class="py-16 bg-gray-800">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12">
                     Get Started in Seconds
@@ -245,7 +303,7 @@
                 <div class="max-w-4xl mx-auto">
                     <div class="mb-12">
                         <h3 class="text-2xl font-semibold mb-4">Basic Usage</h3>
-                        <p class="text-gray-600 mb-6">
+                        <p class="text-gray-400 mb-6">
                             Just include the script in your HTML. That's it!
                         </p>
 
@@ -253,7 +311,7 @@
                             <button class="copy-btn" onclick="copyCode(this)">
                                 Copy
                             </button>
-                            <pre><code>&lt;script src="https://inhumanegov.com/acknowledge-banner.js"&gt;&lt;/script&gt;</code></pre>
+                            <pre><code>&lt;script src="https://inhumanegov.com/acknowledge-modal.js"&gt;&lt;/script&gt;</code></pre>
                         </div>
                     </div>
 
@@ -261,8 +319,8 @@
                         <h3 class="text-2xl font-semibold mb-4">
                             Custom Configuration
                         </h3>
-                        <p class="text-gray-600 mb-6">
-                            Customize the banner with data attributes:
+                        <p class="text-gray-400 mb-6">
+                            Customize the modal with data attributes:
                         </p>
 
                         <div class="code-block text-gray-200">
@@ -270,13 +328,10 @@
                                 Copy
                             </button>
                             <pre><code>&lt;script
-  src="https://inhumanegov.com/acknowledge-banner.js"
-  data-theme="dark"
-  data-position="top"
+  src="https://inhumanegov.com/acknowledge-modal.js"
   data-expiration-days="730"
-  data-message="🇮🇱 Isrial is commiting genocide in 🇵🇸 Palestine, 🇷🇺 Russia is invading 🇺🇦 Ukraine, The 🇺🇸 US is violating constitutional protected rights, These governments are inhumane"
+  data-message="🇮🇱 Israel is committing genocide in 🇵🇸 Palestine&lt;br /&gt;🇷🇺 Russia is invading 🇺🇦 Ukraine&lt;br /&gt;🇺🇸 US is violating constitutional rights&lt;br /&gt;These governments are inhumane"
   data-accept-text="I Acknowledge"
-  data-learn-more-text="Learn More / Get the Facts"
   data-learn-more-url="https://www.ohchr.org/en/press-releases/2025/09/israel-has-committed-genocide-gaza-strip-un-commission-finds"&gt;
 &lt;/script&gt;</code></pre>
                         </div>
@@ -286,7 +341,7 @@
         </section>
 
         <!-- Configuration Options -->
-        <section class="py-16 bg-gray-100">
+        <section class="py-16 bg-gray-900">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12">
                     Configuration Options
@@ -294,73 +349,51 @@
 
                 <div class="max-w-4xl mx-auto overflow-x-auto">
                     <table
-                        class="min-w-full bg-white rounded-lg overflow-hidden shadow"
+                        class="min-w-full bg-gray-800 rounded-lg overflow-hidden border border-gray-700"
                     >
-                        <thead class="bg-gray-800 text-white">
+                        <thead class="bg-gray-700 text-white">
                             <tr>
                                 <th class="py-3 px-4 text-left">Attribute</th>
                                 <th class="py-3 px-4 text-left">Default</th>
                                 <th class="py-3 px-4 text-left">Description</th>
                             </tr>
                         </thead>
-                        <tbody class="text-gray-700">
-                            <tr class="border-b border-gray-200">
-                                <td class="py-3 px-4 font-mono">data-theme</td>
-                                <td class="py-3 px-4">light</td>
-                                <td class="py-3 px-4">
-                                    Color theme: 'light' or 'dark'
-                                </td>
-                            </tr>
-                            <tr class="border-b border-gray-200">
-                                <td class="py-3 px-4 font-mono">
-                                    data-position
-                                </td>
-                                <td class="py-3 px-4">bottom</td>
-                                <td class="py-3 px-4">
-                                    Banner position: 'top' or 'bottom'
-                                </td>
-                            </tr>
-                            <tr class="border-b border-gray-200">
+                        <tbody class="text-gray-300">
+                            <tr class="border-b border-gray-700">
                                 <td class="py-3 px-4 font-mono">
                                     data-expiration-days
                                 </td>
                                 <td class="py-3 px-4">365</td>
                                 <td class="py-3 px-4">
-                                    How long to remember consent (in days)
+                                    How long to remember acknowledgment (in
+                                    days)
                                 </td>
                             </tr>
-                            <tr class="border-b border-gray-200">
+                            <tr class="border-b border-gray-700">
                                 <td class="py-3 px-4 font-mono">
                                     data-message
                                 </td>
                                 <td class="py-3 px-4">
-                                    We use cookies to enhance your experience...
+                                    Default acknowledgment message
                                 </td>
-                                <td class="py-3 px-4">Custom message text</td>
+                                <td class="py-3 px-4">
+                                    Custom message text (HTML allowed)
+                                </td>
                             </tr>
-                            <tr class="border-b border-gray-200">
+                            <tr class="border-b border-gray-700">
                                 <td class="py-3 px-4 font-mono">
                                     data-accept-text
                                 </td>
-                                <td class="py-3 px-4">I Understand</td>
+                                <td class="py-3 px-4">I Acknowledge</td>
                                 <td class="py-3 px-4">Accept button text</td>
-                            </tr>
-                            <tr class="border-b border-gray-200">
-                                <td class="py-3 px-4 font-mono">
-                                    data-learn-more-text
-                                </td>
-                                <td class="py-3 px-4">Learn More</td>
-                                <td class="py-3 px-4">
-                                    Learn more button text
-                                </td>
                             </tr>
                             <tr>
                                 <td class="py-3 px-4 font-mono">
                                     data-learn-more-url
                                 </td>
-                                <td class="py-3 px-4">/privacy</td>
+                                <td class="py-3 px-4">OHCHR Report</td>
                                 <td class="py-3 px-4">
-                                    URL for learn more page
+                                    URL for learn more page (opens in new tab)
                                 </td>
                             </tr>
                         </tbody>
@@ -376,9 +409,11 @@
                     class="flex flex-col md:flex-row justify-between items-center"
                 >
                     <div class="mb-6 md:mb-0">
-                        <h3 class="text-xl font-bold">Consent Banner</h3>
+                        <h3 class="text-xl font-bold">
+                            Inhumane Government Acknowledgment
+                        </h3>
                         <p class="text-gray-400 mt-2">
-                            A simple cookie consent solution
+                            Raising awareness about human rights violations
                         </p>
                     </div>
                     <div class="flex space-x-6">
@@ -399,7 +434,10 @@
                 <div
                     class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
                 >
-                    <p>&copy; 2025 Consent Banner. Open source project.</p>
+                    <p>
+                        &copy; 2025 Inhumane Government Acknowledgment. Open
+                        source project.
+                    </p>
                 </div>
             </div>
         </footer>
@@ -433,9 +471,9 @@
                     document.cookie =
                         "inhumanegov=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                     document.getElementById("consent-status").textContent =
-                        "No consent";
+                        "Not acknowledged";
                     alert(
-                        "Consent has been reset. Refresh the page to see the banner again.",
+                        "Acknowledgment has been reset. Refresh the page to see the modal again.",
                     );
                 });
 
@@ -445,14 +483,14 @@
                     const hasConsent =
                         document.cookie.includes("inhumanegov=true");
                     document.getElementById("consent-status").textContent =
-                        hasConsent ? "Consent given" : "No consent";
+                        hasConsent ? "Acknowledged" : "Not acknowledged";
                 });
 
             // Initialize consent status
             window.addEventListener("load", function () {
                 const hasConsent = document.cookie.includes("inhumanegov=true");
                 document.getElementById("consent-status").textContent =
-                    hasConsent ? "Consent given" : "No consent";
+                    hasConsent ? "Acknowledged" : "Not acknowledged";
             });
 
             // Listen for consent events
@@ -461,11 +499,11 @@
                 document.getElementById("event-counter").textContent =
                     eventCount;
                 document.getElementById("consent-status").textContent =
-                    "Consent given";
+                    "Acknowledged";
             });
         </script>
 
-        <!-- Consent Banner Script (This is the actual script we're demonstrating) -->
-        <script src="acknowledge-banner.js"></script>
+        <!-- Consent Modal Script (This is the actual script we're demonstrating) -->
+        <script src="acknowledge-modal.js"></script>
     </body>
 </html>

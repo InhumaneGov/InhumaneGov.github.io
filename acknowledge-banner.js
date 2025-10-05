@@ -8,8 +8,7 @@
     message:
       "🇮🇱 Israel is committing genocide in 🇵🇸 Palestine<br />🇷🇺 Russia is invading 🇺🇦 Ukraine,<br />🇺🇸 US is violating constitutional rights,<br />These governments are inhumane",
     acceptText: "I Acknowledge",
-    learnMoreUrl:
-      "https://www.ohchr.org/en/press-releases/2025/09/israel-has-committed-genocide-gaza-strip-un-commission-finds",
+    learnMoreUrl: "https://inhumanegov.com/news",
     zIndex: 10000,
   };
 
