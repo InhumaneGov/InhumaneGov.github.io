@@ -8,7 +8,7 @@
     position: "bottom",
     theme: "light",
     message:
-      "🇮🇱 Isrial is commiting genocide in 🇵🇸 Palestine<br />🇷🇺 Russia is invading 🇺🇦 Ukraine,<br />The 🇺🇸 US is violating constitutional protected rights,<br />These governments are inhumane",
+      "🇮🇱 Israel is committing genocide in 🇵🇸 Palestine<br />🇷🇺 Russia is invading 🇺🇦 Ukraine,<br />🇺🇸 US is violating constitutional rights,<br />These governments are inhumane",
     acceptText: "I Acknowledge",
     learnMoreText: "Learn More",
     learnMoreUrl:
