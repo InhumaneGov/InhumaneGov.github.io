@@ -180,6 +180,7 @@
 
     modal.innerHTML = `
       <div class="consent-modal-content">
+        <h2>Before using this website, please read the Acknowledge these inhumane governments:</h2>
         <p class="consent-message">${config.message}</p>
         <div class="consent-buttons">
           ${
