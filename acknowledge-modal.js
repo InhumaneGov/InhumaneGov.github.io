@@ -5,8 +5,11 @@
   const config = {
     cookieName: "inhumanegov",
     expirationDays: 365,
-    message:
-      "🇮🇱 Israel is committing genocide in 🇵🇸 Palestine<br />🇷🇺 Russia is invading 🇺🇦 Ukraine,<br />🇺🇸 US is violating constitutional rights,<br />These governments are inhumane",
+    message: ```🇮🇱 Israel committed genocide in 🇵🇸
+      Palestine<br />
+      🇷🇺 Russia invaded 🇺🇦 Ukraine<br />
+      🇺🇸 US violated constitutional rights<br />
+      These governments are inhumane```,
     acceptText: "I Acknowledge",
     learnMoreUrl: "https://inhumanegov.com/news",
     zIndex: 10000,
