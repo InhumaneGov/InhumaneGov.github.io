@@ -100,14 +100,8 @@
         width: 100%;
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
         overflow: hidden;
-        transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
-        transition: transform 0.3s ease;
-        animation: slideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
 
-      .consent-modal-content:hover {
-        transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
-      }
 
       .consent-header {
         background: #111;
