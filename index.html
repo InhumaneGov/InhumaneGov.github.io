@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Consent Banner - Simple Cookie Consent Solution</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <style>
+            .gradient-bg {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            }
+            .code-block {
+                background: #1a202c;
+                border-radius: 0.5rem;
+                padding: 1.5rem;
+                position: relative;
+            }
+            .copy-btn {
+                position: absolute;
+                top: 0.5rem;
+                right: 0.5rem;
+                background: rgba(255, 255, 255, 0.1);
+                border: none;
+                color: white;
+                padding: 0.25rem 0.5rem;
+                border-radius: 0.25rem;
+                cursor: pointer;
+                font-size: 0.75rem;
+            }
+            .feature-icon {
+                width: 3rem;
+                height: 3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            .demo-section {
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body class="bg-gray-50">
+        <!-- Header -->
+        <header class="gradient-bg text-white">
+            <div class="container mx-auto px-6 py-16">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                            Consent Banner
+                        </h1>
+                        <p class="text-xl mb-8 text-blue-100">
+                            A simple, lightweight cookie consent solution that
+                            just works.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a
+                                href="#demo"
+                                class="bg-white text-purple-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+                                >Try Demo</a
+                            >
+                            <a
+                                href="#usage"
+                                class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-700 transition"
+                                >Get Started</a
+                            >
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div
+                            class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl shadow-xl max-w-md"
+                        >
+                            <div
+                                class="bg-white text-gray-800 p-4 rounded-lg shadow"
+                            >
+                                <p class="mb-4 text-sm">
+                                    We use cookies to enhance your experience.
+                                    By continuing to visit this site you agree
+                                    to our use of cookies.
+                                </p>
+                                <div class="flex justify-between">
+                                    <button
+                                        class="text-purple-600 text-sm font-medium"
+                                    >
+                                        Learn More
+                                    </button>
+                                    <button
+                                        class="bg-purple-600 text-white px-4 py-2 rounded text-sm font-medium"
+                                    >
+                                        I Understand
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Features -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">
+                    Why Choose Consent Banner?
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-6">
+                        <div
+                            class="feature-icon bg-purple-100 text-purple-600 mx-auto"
+                        >
+                            <i class="fas fa-file-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Single File</h3>
+                        <p class="text-gray-600">
+                            Just one JavaScript file. No dependencies, no extra
+                            CSS files. Simply include and it works.
+                        </p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div
+                            class="feature-icon bg-blue-100 text-blue-600 mx-auto"
+                        >
+                            <i class="fas fa-cookie-bite text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            First-Party Only
+                        </h3>
+                        <p class="text-gray-600">
+                            Uses first-party cookies only. No cross-site
+                            tracking. Compliant with privacy regulations.
+                        </p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div
+                            class="feature-icon bg-green-100 text-green-600 mx-auto"
+                        >
+                            <i class="fas fa-sliders-h text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Fully Customizable
+                        </h3>
+                        <p class="text-gray-600">
+                            Easily customize appearance, text, and behavior with
+                            simple data attributes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="demo" class="demo-section py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-6">Live Demo</h2>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+                    The consent banner below is the actual script running on
+                    this page. Accept it once and it won't show again on this
+                    site.
+                </p>
+
+                <div
+                    class="bg-white rounded-xl shadow-lg p-8 max-w-2xl mx-auto"
+                >
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-4">
+                            Test the Banner
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            If you haven't accepted cookies yet, the banner
+                            should be visible. Accept it to see how it works.
+                        </p>
+
+                        <div class="bg-gray-800 text-white p-4 rounded-lg mb-4">
+                            <p class="text-sm">
+                                Current consent status:
+                                <span
+                                    id="consent-status"
+                                    class="font-mono font-bold"
+                                    >Checking...</span
+                                >
+                            </p>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <button
+                                id="reset-consent"
+                                class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition"
+                            >
+                                Reset Consent
+                            </button>
+                            <button
+                                id="check-consent"
+                                class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition"
+                            >
+                                Check Status
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-6">
+                        <h3 class="text-xl font-semibold mb-4">
+                            Event Listening Example
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Other scripts can listen for the consent event. Try
+                            accepting the banner and watch the counter below:
+                        </p>
+
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <p class="text-sm font-medium">
+                                Consent granted events detected:
+                                <span
+                                    id="event-counter"
+                                    class="font-mono font-bold text-purple-600"
+                                    >0</span
+                                >
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage -->
+        <section id="usage" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">
+                    Get Started in Seconds
+                </h2>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-semibold mb-4">Basic Usage</h3>
+                        <p class="text-gray-600 mb-6">
+                            Just include the script in your HTML. That's it!
+                        </p>
+
+                        <div class="code-block text-gray-200">
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                Copy
+                            </button>
+                            <pre><code>&lt;script src="https://yourusername.github.io/consent-banner/consent-banner.js"&gt;&lt;/script&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-semibold mb-4">
+                            Custom Configuration
+                        </h3>
+                        <p class="text-gray-600 mb-6">
+                            Customize the banner with data attributes:
+                        </p>
+
+                        <div class="code-block text-gray-200">
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                Copy
+                            </button>
+                            <pre><code>&lt;script
+  src="https://yourusername.github.io/consent-banner/consent-banner.js"
+  data-theme="dark"
+  data-position="top"
+  data-expiration-days="730"
+  data-message="We use cookies for analytics and personalization."
+  data-accept-text="Accept All"
+  data-learn-more-text="Cookie Settings"
+  data-learn-more-url="/privacy"&gt;
+&lt;/script&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-semibold mb-4">
+                            Listening for Consent
+                        </h3>
+                        <p class="text-gray-600 mb-6">
+                            Load third-party scripts only after consent is
+                            given:
+                        </p>
+
+                        <div class="code-block text-gray-200">
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                Copy
+                            </button>
+                            <pre><code>&lt;script&gt;
+  // Check if consent already given
+  if (window.ConsentBanner && window.ConsentBanner.hasConsent()) {
+    loadAnalytics();
+  }
+
+  // Listen for new consent
+  window.addEventListener('consentGranted', function() {
+    loadAnalytics();
+    loadChatWidget();
+    // Other consent-dependent scripts
+  });
+
+  function loadAnalytics() {
+    // Your analytics code here
+    console.log('Loading analytics...');
+  }
+&lt;/script&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Configuration Options -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">
+                    Configuration Options
+                </h2>
+
+                <div class="max-w-4xl mx-auto overflow-x-auto">
+                    <table
+                        class="min-w-full bg-white rounded-lg overflow-hidden shadow"
+                    >
+                        <thead class="bg-gray-800 text-white">
+                            <tr>
+                                <th class="py-3 px-4 text-left">Attribute</th>
+                                <th class="py-3 px-4 text-left">Default</th>
+                                <th class="py-3 px-4 text-left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700">
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4 font-mono">data-theme</td>
+                                <td class="py-3 px-4">light</td>
+                                <td class="py-3 px-4">
+                                    Color theme: 'light' or 'dark'
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4 font-mono">
+                                    data-position
+                                </td>
+                                <td class="py-3 px-4">bottom</td>
+                                <td class="py-3 px-4">
+                                    Banner position: 'top' or 'bottom'
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4 font-mono">
+                                    data-expiration-days
+                                </td>
+                                <td class="py-3 px-4">365</td>
+                                <td class="py-3 px-4">
+                                    How long to remember consent (in days)
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4 font-mono">
+                                    data-message
+                                </td>
+                                <td class="py-3 px-4">
+                                    We use cookies to enhance your experience...
+                                </td>
+                                <td class="py-3 px-4">Custom message text</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4 font-mono">
+                                    data-accept-text
+                                </td>
+                                <td class="py-3 px-4">I Understand</td>
+                                <td class="py-3 px-4">Accept button text</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4 font-mono">
+                                    data-learn-more-text
+                                </td>
+                                <td class="py-3 px-4">Learn More</td>
+                                <td class="py-3 px-4">
+                                    Learn more button text
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-mono">
+                                    data-learn-more-url
+                                </td>
+                                <td class="py-3 px-4">/privacy</td>
+                                <td class="py-3 px-4">
+                                    URL for learn more page
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-12">
+            <div class="container mx-auto px-6">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center"
+                >
+                    <div class="mb-6 md:mb-0">
+                        <h3 class="text-xl font-bold">Consent Banner</h3>
+                        <p class="text-gray-400 mt-2">
+                            A simple cookie consent solution
+                        </p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a
+                            href="#"
+                            class="text-gray-400 hover:text-white transition"
+                        >
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a
+                            href="#"
+                            class="text-gray-400 hover:text-white transition"
+                        >
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
+                >
+                    <p>&copy; 2023 Consent Banner. Open source project.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Demo Scripts -->
+        <script>
+            // Copy code button functionality
+            function copyCode(button) {
+                const codeBlock = button.parentElement.querySelector("code");
+                const textArea = document.createElement("textarea");
+                textArea.value = codeBlock.textContent;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textArea);
+
+                // Visual feedback
+                const originalText = button.textContent;
+                button.textContent = "Copied!";
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            }
+
+            // Demo functionality
+            let eventCount = 0;
+
+            document
+                .getElementById("reset-consent")
+                .addEventListener("click", function () {
+                    document.cookie =
+                        "site_consent_given=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    document.getElementById("consent-status").textContent =
+                        "No consent";
+                    alert(
+                        "Consent has been reset. Refresh the page to see the banner again.",
+                    );
+                });
+
+            document
+                .getElementById("check-consent")
+                .addEventListener("click", function () {
+                    const hasConsent = document.cookie.includes(
+                        "site_consent_given=true",
+                    );
+                    document.getElementById("consent-status").textContent =
+                        hasConsent ? "Consent given" : "No consent";
+                });
+
+            // Initialize consent status
+            window.addEventListener("load", function () {
+                const hasConsent = document.cookie.includes(
+                    "site_consent_given=true",
+                );
+                document.getElementById("consent-status").textContent =
+                    hasConsent ? "Consent given" : "No consent";
+            });
+
+            // Listen for consent events
+            window.addEventListener("consentGranted", function () {
+                eventCount++;
+                document.getElementById("event-counter").textContent =
+                    eventCount;
+                document.getElementById("consent-status").textContent =
+                    "Consent given";
+            });
+        </script>
+
+        <!-- Consent Banner Script (This is the actual script we're demonstrating) -->
+        <script src="consent-banner.js"></script>
+    </body>
+</html>
