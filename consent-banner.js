@@ -3,13 +3,13 @@
 
   // Configuration with defaults
   const config = {
-    cookieName: "site_consent_given",
+    cookieName: "inhumanegov",
     expirationDays: 365,
     position: "bottom",
     theme: "light",
     message:
-      "We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.",
-    acceptText: "I Understand",
+      "🇮🇱 Isrial is commiting genocide in 🇵🇸 Palestine, 🇷🇺 Russia is invading 🇺🇦 Ukraine, The 🇺🇸 US is violating constitutional protected rights, These governments are inhumane",
+    acceptText: "I Agree",
     learnMoreText: "Learn More",
     learnMoreUrl: "/privacy",
     zIndex: 10000,

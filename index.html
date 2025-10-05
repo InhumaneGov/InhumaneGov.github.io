@@ -3,7 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Consent Banner - Simple Cookie Consent Solution</title>
+        <title>
+            Inhumane Goverment - A Simple Acknowledgement of Inhumane Goverments
+        </title>
+        <meta
+            name="description"
+            content="A simple acknowledgement of inhumane governments for your website"
+        />
         <script src="https://cdn.tailwindcss.com"></script>
         <link
             rel="stylesheet"
@@ -459,7 +465,7 @@
                 .getElementById("reset-consent")
                 .addEventListener("click", function () {
                     document.cookie =
-                        "site_consent_given=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                        "inhumanegov=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                     document.getElementById("consent-status").textContent =
                         "No consent";
                     alert(
@@ -470,18 +476,15 @@
             document
                 .getElementById("check-consent")
                 .addEventListener("click", function () {
-                    const hasConsent = document.cookie.includes(
-                        "site_consent_given=true",
-                    );
+                    const hasConsent =
+                        document.cookie.includes("inhumanegov=true");
                     document.getElementById("consent-status").textContent =
                         hasConsent ? "Consent given" : "No consent";
                 });
 
             // Initialize consent status
             window.addEventListener("load", function () {
-                const hasConsent = document.cookie.includes(
-                    "site_consent_given=true",
-                );
+                const hasConsent = document.cookie.includes("inhumanegov=true");
                 document.getElementById("consent-status").textContent =
                     hasConsent ? "Consent given" : "No consent";
             });
